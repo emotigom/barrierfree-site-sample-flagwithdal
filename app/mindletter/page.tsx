@@ -6,6 +6,13 @@ type ApiResponse = {
   text: string;
 };
 
+class ApiError extends Error {
+  constructor(public status: number, message: string) {
+    super(message);
+    this.name = "ApiError";
+  }
+}
+
 const MindLetter: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [letter, setLetter] = useState<string>("");
@@ -23,18 +30,24 @@ const MindLetter: React.FC = () => {
       });
 
       if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
+        throw new ApiError(response.status, `Error: ${response.status}`);
       }
 
       const data: ApiResponse = await response.json();
       setLetter(data.text);
-    } catch (error: any) {
-      console.error("Error generating letter:", error);
-      alert(`Failed to generate letter: ${error.message}`);
+    } catch (error) {
+      if (error instanceof ApiError) {
+        console.error("API Error:", error.message);
+        alert(`API Error: ${error.message} (Status: ${error.status})`);
+      } else {
+        console.error("Unexpected Error:", error);
+        alert("An unexpected error occurred. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
   };
+
   console.log("Loaded API Key:", process.env.OPENAI_API_KEY);
 
   return (
