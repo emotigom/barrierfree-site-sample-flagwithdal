@@ -21,7 +21,7 @@ const MindLetter: React.FC = () => {
   const generateLetter = async () => {
     setLoading(true);
     try {
-      const response = await fetch("/pages/api/generate-letter", {
+      const response = await fetch("../api/generate-letter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
