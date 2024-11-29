@@ -21,7 +21,7 @@ const MindLetter: React.FC = () => {
   const generateLetter = async () => {
     setLoading(true);
     try {
-      const response = await fetch("../api/generate-letter", {
+      const response = await fetch("/api/generate-letter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,8 +47,6 @@ const MindLetter: React.FC = () => {
       setLoading(false);
     }
   };
-
-  console.log("Loaded API Key:", process.env.OPENAI_API_KEY);
 
   return (
     <div className="flex flex-col items-center p-8">
