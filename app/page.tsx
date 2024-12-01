@@ -1,6 +1,33 @@
 import React from "react";
 import Link from "next/link";
 
+export const metadata = {
+  title: "그린withDal",
+  description: "그린withDal 웹페이지 입니다.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "그린withDal",
+    description: "그린withDal 웹페이지 입니다.",
+    url: "flagwithdal.vercel.app",
+    images: [
+      {
+        url: "/og-image.png", // Open Graph 이미지
+        width: 1200,
+        height: 630,
+        alt: "그린withDal 로고 이미지입니다.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "그린withDal",
+    description: "그린withDal 웹페이지 입니다.",
+    images: ["/og-image.png"],
+  },
+};
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center text-center h-screen bg-green-600">
