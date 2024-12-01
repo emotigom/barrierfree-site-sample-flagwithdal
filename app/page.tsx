@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex flex-col items-center text-center h-screen bg-green-600">
       <div className="bg-black text-white py-5 w-full">그린withDal</div>
       <div className="flex justify-around w-full bg-orange-500 py-3">
-        <Link href="/MindLetter">
+        <Link href="/mindletter">
           <div className="text-white font-bold">마음 편지</div>
         </Link>
         <Link href="/barrierfree">
