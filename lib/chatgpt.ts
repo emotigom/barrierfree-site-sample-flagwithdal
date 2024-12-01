@@ -12,7 +12,7 @@ export const generateLetter = async (prompt: string): Promise<string> => {
         { role: "system", content: "You are a helpful assistant." },
         {
           role: "user",
-          content: `Write a heartfelt letter based on the following input:\n${prompt}`,
+          content: `Write a heartfelt letter based on the following input:\n${prompt} in Korean language`,
         },
       ],
     });
