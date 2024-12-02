@@ -1,4 +1,3 @@
-// app/mindletter/ClientComponent.tsx
 "use client";
 
 import { useState } from "react";
