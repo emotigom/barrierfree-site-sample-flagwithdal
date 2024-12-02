@@ -4,7 +4,10 @@ const personalbudget = () => {
   return (
     <>
       <div>장애인 개인 예산제</div>
-      <div className="text-[100px]">💫</div>
+      <div className="text-xl">
+        장애인이 자신에게 필요한 서비스를 직접 선택하고 관리할 수 있게 지원하는
+        제도
+      </div>
       <div className="my-4">
         <h2 className="text-xl font-bold">연합뉴스 기사 요약</h2>
         <p>
