@@ -12,7 +12,8 @@ export const generateLetter = async (prompt: string): Promise<string> => {
         { role: "system", content: "You are a helpful assistant." },
         {
           role: "user",
-          content: `다음 내용을 바탕으로 아래의 구조를 따른 진심 어린 편지를 한국어로 작성해주세요:
+          content: `다음 내용을 바탕으로 아래의 구조를 따른 진심 어린 편지를 한국어로 250글자 이내로 작성해주세요:
+          - 받는 사람
           - 시작 인사
           - 내용 요약
           - 세부 설명
