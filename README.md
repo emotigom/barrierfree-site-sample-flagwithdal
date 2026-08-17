@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 그린withDal
 
-## Getting Started
+배리어프리 정보 접근과 마음 표현을 탐색한 웹서비스 프로토타입입니다.
 
-First, run the development server:
+> [!NOTE]
+> 이 저장소는 2024년 사회적 가치 분야의 조직 간 협업 과정에서 제작된 탐색형 결과물을 기록하기 위해 공개되어 있습니다. 주요 기능 개발은 2024년 11–12월에 진행되었으며, 현재는 개발과 운영이 중단된 아카이브 프로젝트입니다.
+
+## 프로젝트 개요
+
+그린withDal은 장애인과 비장애인이 함께 이용할 수 있는 정보·소통 서비스를 하나의 웹 경험으로 연결할 수 있는지 검토한 초기 시도입니다. 완성된 제품이나 현재 운영 중인 서비스가 아니라, 협업 과정에서 구현 가능성과 방향을 확인한 프로토타입입니다.
+
+### 구현 범위
+
+| 경로 | 내용 | 상태 |
+| --- | --- | --- |
+| `/` | 서비스 메뉴와 초기 화면 | 프로토타입 |
+| `/mindletter` | 입력 내용을 바탕으로 마음 편지를 생성하는 기능 | 초기 구현 |
+| `/barrierfree` | 배리어프리 개념 안내 | 초기 구현 |
+| `/personalbudget` | 장애인 개인예산제 소개와 참고 링크 | 초기 구현 |
+| `/movefree` | 이동의 자유 | 자리표시자 |
+| `/improveaware` | 인식 개선 | 자리표시자 |
+| `/convenience` | 편의 정보 | 자리표시자 |
+
+## 기술 구성
+
+- Next.js 15
+- React 19 RC
+- TypeScript
+- Tailwind CSS
+- OpenAI Node.js SDK
+
+## 로컬에서 살펴보기
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 `http://localhost:3000`을 엽니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+마음 편지 생성 기능을 시험하려면 저장소 루트에 `.env.local` 파일을 만들고 서버 전용 API 키를 설정합니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```dotenv
+OPENAI_API_KEY=your_api_key
+```
 
-## Learn More
+API 키를 `NEXT_PUBLIC_` 환경변수에 넣거나 소스 코드에 기록하지 마세요.
 
-To learn more about Next.js, take a look at the following resources:
+## 현재 제한사항
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 사용자 인증, 호출량 제한, 운영 모니터링이 구현되어 있지 않습니다.
+- 일부 메뉴는 화면 자리만 마련된 상태입니다.
+- 사용 중인 프레임워크와 AI 모델의 최신 호환성은 검증하지 않았습니다.
+- 운영 환경 배포나 실제 이용자 데이터 처리를 전제로 하지 않습니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+따라서 이 코드는 학습·검토용 기록이며, 별도의 보안 검토 없이 서비스에 배포하기에 적합하지 않습니다.
 
-## Deploy on Vercel
+## 기록과 권리
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+이 저장소는 여러 주체가 참여한 협업의 기술적 결과물을 보존합니다. 공개 커밋 기록에 나타나는 구현 이력과 별개로, 기획·콘텐츠·명칭·디자인·기타 자료의 권리는 각 권리자에게 귀속될 수 있습니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+공개 저장소라는 사실만으로 코드나 콘텐츠의 사용·복제·수정·배포 권한이 부여되지는 않습니다. 자세한 조건은 [LICENSE](./LICENSE)를 확인하세요. 외부 패키지와 연결된 자료에는 각 항목의 별도 라이선스와 이용 조건이 적용됩니다.
+
+권리 또는 표기와 관련한 정정이 필요하면 저장소 소유자에게 문의해 주세요.
