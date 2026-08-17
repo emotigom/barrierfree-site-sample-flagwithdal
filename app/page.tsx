@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: "그린withDal",
     description: "그린withDal 웹페이지 입니다.",
-    url: "flagwithdal.vercel.app",
+    url: "https://flagwithdal.vercel.app",
     images: [
       {
         url: "/og-image.png", // Open Graph 이미지

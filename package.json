@@ -1,7 +1,9 @@
 {
   "name": "flagwithdal",
   "version": "0.1.0",
+  "description": "Archived prototype exploring barrier-free information and communication services.",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

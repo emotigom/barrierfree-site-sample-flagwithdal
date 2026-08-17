@@ -1,10 +1,14 @@
 import { OpenAI } from "openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!, // 환경변수에서 API 키 읽기
-});
-
 export const generateLetter = async (prompt: string): Promise<string> => {
+  const apiKey = process.env.OPENAI_API_KEY;
+
+  if (!apiKey) {
+    return "OpenAI API key is not configured.";
+  }
+
+  const openai = new OpenAI({ apiKey });
+
   try {
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
